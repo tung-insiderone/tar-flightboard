@@ -1,99 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>TAR Airlines – Departures</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-body {
-  font-family: Arial, sans-serif;
-  background-color: #0b1d2a;
-  color: #ffffff;
-  margin: 0;
-  padding: 0;
-}
-
-/* ===== HEADER (clean / dashboard style) ===== */
-.header {
-  background-color: #102a43;
-  padding: 16px 20px;
-  border-bottom: 1px solid #243b53;
-}
-
-.header-content {
-  display: flex;
-  align-items: center;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.logo {
-  height: 36px;
-  width: auto;
-}
-
-.header h1 {
-  margin: 0;
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.header p {
-  margin: 0;
-  font-size: 13px;
-  color: #9fb3c8;
-}
-
-/* ===== CONTENT ===== */
-.container {
-  padding: 20px;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th, td {
-  padding: 12px;
-  text-align: left;
-}
-
-th {
-  background-color: #243b53;
-}
-
-tr:nth-child(even) {
-  background-color: #1f2933;
-}
-
-.status {
-  color: #38bdf8;
-  font-weight: bold;
-}
-
-/* ===== FOOTER ===== */
-.footer {
-  padding: 15px;
-  text-align: center;
-  font-size: 12px;
-  color: #9fb3c8;
-}
-</style>
-</head>
-
 <body>
 
 <!-- ===== HEADER ===== -->
 <div class="header">
   <div class="header-content">
     <div class="brand">
-      <img src="https://i.imgur.com/mZIsNiY.png" alt="Logo" class="logo">
+      <img src="https://imgur.com/undefined" alt="Logo" class="logo">
       <div>
         <h1>Hong Kong International Airport</h1>
         <p>International Departures · HKG</p>
@@ -105,49 +16,21 @@ tr:nth-child(even) {
 <!-- ===== TABLE ===== -->
 <div class="container">
 <table>
-  <tr>
-    <th>Flight</th>
-    <th>Airline</th>
-    <th>Destination</th>
-    <th>Transit</th>
-    <th>Departure</th>
-    <th>Arrival</th>
-    <th>Status</th>
-  </tr>
-
-  <tr><td>GA839</td><td>Garuda Indonesia</td><td>DPS</td><td>SIN</td><td>06:45</td><td>18:10</td><td class="status">On Time</td></tr>
-  <tr><td>JL312</td><td>Japan Airlines</td><td>OKA</td><td>TPE</td><td>07:25</td><td>19:30</td><td class="status">On Time</td></tr>
-  <tr><td>QR977</td><td>Qatar Airways</td><td>DOH</td><td>SIN</td><td>01:55</td><td>22:15</td><td class="status">On Time</td></tr>
-  <tr><td>NH805</td><td>All Nippon Airways</td><td>CTS</td><td>HND</td><td>10:00</td><td>18:20</td><td class="status">On Time</td></tr>
-  <tr><td>MH759</td><td>Malaysia Airlines</td><td>KUL</td><td>SIN</td><td>11:00</td><td>17:40</td><td class="status">On Time</td></tr>
-  <tr><td>VN532</td><td>Vietnam Airlines</td><td>HAN</td><td>SGN</td><td>14:20</td><td>18:30</td><td class="status">On Time</td></tr>
-  <tr><td>JL752</td><td>Japan Airlines</td><td>NRT</td><td>ICN</td><td>07:00</td><td>18:40</td><td class="status">On Time</td></tr>
-  <tr><td>CX764</td><td>Cathay Pacific</td><td>HKG</td><td>Direct</td><td>06:00</td><td>09:40</td><td class="status">On Time</td></tr>
-  <tr><td>TK165</td><td>Turkish Airlines</td><td>IST</td><td>ICN</td><td>02:30</td><td>23:55</td><td class="status">On Time</td></tr>
-  <tr><td>JL300</td><td>Japan Airlines</td><td>KIX</td><td>Direct</td><td>09:10</td><td>16:30</td><td class="status">On Time</td></tr>
-
-  <tr><td>CI782</td><td>China Airlines</td><td>TPE</td><td>Direct</td><td>13:10</td><td>15:45</td><td class="status">On Time</td></tr>
-  <tr><td>BR196</td><td>EVA Air</td><td>HND</td><td>TPE</td><td>08:15</td><td>20:50</td><td class="status">On Time</td></tr>
-  <tr><td>KE682</td><td>Korean Air</td><td>ICN</td><td>Direct</td><td>08:40</td><td>15:30</td><td class="status">On Time</td></tr>
-  <tr><td>NH732</td><td>All Nippon Airways</td><td>ITM</td><td>Direct</td><td>11:40</td><td>18:10</td><td class="status">On Time</td></tr>
-  <tr><td>PR428</td><td>Philippine Airlines</td><td>MNL</td><td>Direct</td><td>08:30</td><td>11:55</td><td class="status">On Time</td></tr>
-  <tr><td>OZ742</td><td>Asiana Airlines</td><td>GMP</td><td>ICN</td><td>09:20</td><td>16:50</td><td class="status">On Time</td></tr>
-  <tr><td>NH946</td><td>All Nippon Airways</td><td>NGO</td><td>Direct</td><td>12:15</td><td>18:45</td><td class="status">On Time</td></tr>
-  <tr><td>AI333</td><td>Air India</td><td>DEL</td><td>BKK</td><td>05:50</td><td>22:10</td><td class="status">On Time</td></tr>
-  <tr><td>JL861</td><td>Japan Airlines</td><td>KOJ</td><td>FUK</td><td>13:10</td><td>20:05</td><td class="status">On Time</td></tr>
-  <tr><td>VN310</td><td>Vietnam Airlines</td><td>SGN</td><td>Direct</td><td>09:00</td><td>10:40</td><td class="status">On Time</td></tr>
-
-  <tr><td>EK393</td><td>Emirates</td><td>DXB</td><td>BKK</td><td>04:55</td><td>21:30</td><td class="status">On Time</td></tr>
-  <tr><td>NH848</td><td>All Nippon Airways</td><td>HND</td><td>Direct</td><td>06:30</td><td>14:10</td><td class="status">On Time</td></tr>
-  <tr><td>BR216</td><td>EVA Air</td><td>KHH</td><td>TPE</td><td>15:00</td><td>20:40</td><td class="status">On Time</td></tr>
-  <tr><td>SQ175</td><td>Singapore Airlines</td><td>SIN</td><td>Direct</td><td>07:10</td><td>10:25</td><td class="status">On Time</td></tr>
-  <tr><td>UL226</td><td>SriLankan Airlines</td><td>CMB</td><td>SIN</td><td>07:40</td><td>23:20</td><td class="status">On Time</td></tr>
-  <tr><td>JL826</td><td>Japan Airlines</td><td>FUK</td><td>ICN</td><td>06:50</td><td>17:10</td><td class="status">On Time</td></tr>
-  <tr><td>EY441</td><td>Etihad Airways</td><td>AUH</td><td>SIN</td><td>06:10</td><td>22:40</td><td class="status">On Time</td></tr>
-  <tr><td>NH848</td><td>All Nippon Airways</td><td>HND</td><td>Direct</td><td>06:30</td><td>14:10</td><td class="status">On Time</td></tr>
-  <tr><td>TG403</td><td>Thai Airways</td><td>BKK</td><td>Direct</td><td>10:30</td><td>12:15</td><td class="status">On Time</td></tr>
+  <thead>
+    <tr>
+      <th>Flight</th>
+      <th>Airline</th>
+      <th>Destination</th>
+      <th>Transit</th>
+      <th>Departure</th>
+      <th>Arrival</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody id="flight-table-body">
+    <!-- Rows sẽ được JS thêm vào -->
+  </tbody>
 </table>
-
 </div>
 
 <!-- ===== FOOTER ===== -->
@@ -155,5 +38,73 @@ tr:nth-child(even) {
   Last updated: 09:17 JST
 </div>
 
+<script>
+// ===== DỮ LIỆU CHUYẾN BAY =====
+const flights = [
+  { flight:"GA839", airline:"Garuda Indonesia", dest:"DPS", transit:"SIN", dep:"06:45", arr:"18:10", status:"On Time" },
+  { flight:"JL312", airline:"Japan Airlines", dest:"OKA", transit:"TPE", dep:"07:25", arr:"19:30", status:"On Time" },
+  { flight:"QR977", airline:"Qatar Airways", dest:"DOH", transit:"SIN", dep:"01:55", arr:"22:15", status:"On Time" },
+  { flight:"NH805", airline:"All Nippon Airways", dest:"CTS", transit:"HND", dep:"10:00", arr:"18:20", status:"On Time" },
+  { flight:"MH759", airline:"Malaysia Airlines", dest:"KUL", transit:"SIN", dep:"11:00", arr:"17:40", status:"On Time" },
+  { flight:"VN532", airline:"Vietnam Airlines", dest:"HAN", transit:"SGN", dep:"14:20", arr:"18:30", status:"On Time" },
+  { flight:"JL752", airline:"Japan Airlines", dest:"NRT", transit:"ICN", dep:"07:00", arr:"18:40", status:"On Time" },
+  { flight:"CX764", airline:"Cathay Pacific", dest:"HKG", transit:"Direct", dep:"06:00", arr:"09:40", status:"On Time" },
+  { flight:"TK165", airline:"Turkish Airlines", dest:"IST", transit:"ICN", dep:"02:30", arr:"23:55", status:"On Time" },
+  { flight:"JL300", airline:"Japan Airlines", dest:"KIX", transit:"Direct", dep:"09:10", arr:"16:30", status:"On Time" },
+  { flight:"CI782", airline:"China Airlines", dest:"TPE", transit:"Direct", dep:"13:10", arr:"15:45", status:"On Time" },
+  { flight:"BR196", airline:"EVA Air", dest:"HND", transit:"TPE", dep:"08:15", arr:"20:50", status:"On Time" },
+  { flight:"KE682", airline:"Korean Air", dest:"ICN", transit:"Direct", dep:"08:40", arr:"15:30", status:"On Time" },
+  { flight:"NH732", airline:"All Nippon Airways", dest:"ITM", transit:"Direct", dep:"11:40", arr:"18:10", status:"On Time" },
+  { flight:"PR428", airline:"Philippine Airlines", dest:"MNL", transit:"Direct", dep:"08:30", arr:"11:55", status:"On Time" },
+  { flight:"OZ742", airline:"Asiana Airlines", dest:"GMP", transit:"ICN", dep:"09:20", arr:"16:50", status:"On Time" },
+  { flight:"NH946", airline:"All Nippon Airways", dest:"NGO", transit:"Direct", dep:"12:15", arr:"18:45", status:"On Time" },
+  { flight:"AI333", airline:"Air India", dest:"DEL", transit:"BKK", dep:"05:50", arr:"22:10", status:"On Time" },
+  { flight:"JL861", airline:"Japan Airlines", dest:"KOJ", transit:"FUK", dep:"13:10", arr:"20:05", status:"On Time" },
+  { flight:"VN310", airline:"Vietnam Airlines", dest:"SGN", transit:"Direct", dep:"09:00", arr:"10:40", status:"On Time" },
+  { flight:"EK393", airline:"Emirates", dest:"DXB", transit:"BKK", dep:"04:55", arr:"21:30", status:"On Time" },
+  { flight:"NH848", airline:"All Nippon Airways", dest:"HND", transit:"Direct", dep:"06:30", arr:"14:10", status:"On Time" },
+  { flight:"BR216", airline:"EVA Air", dest:"KHH", transit:"TPE", dep:"15:00", arr:"20:40", status:"On Time" },
+  { flight:"SQ175", airline:"Singapore Airlines", dest:"SIN", transit:"Direct", dep:"07:10", arr:"10:25", status:"On Time" },
+  { flight:"UL226", airline:"SriLankan Airlines", dest:"CMB", transit:"SIN", dep:"07:40", arr:"23:20", status:"On Time" },
+  { flight:"JL826", airline:"Japan Airlines", dest:"FUK", transit:"ICN", dep:"06:50", arr:"17:10", status:"On Time" },
+  { flight:"EY441", airline:"Etihad Airways", dest:"AUH", transit:"SIN", dep:"06:10", arr:"22:40", status:"On Time" },
+  { flight:"TG403", airline:"Thai Airways", dest:"BKK", transit:"Direct", dep:"10:30", arr:"12:15", status:"On Time" }
+];
+
+// ===== CHIA PAGE 15 CHUYẾN =====
+const pageSize = 15;
+const pages = [];
+for (let i = 0; i < flights.length; i += pageSize) {
+  pages.push(flights.slice(i, i + pageSize));
+}
+
+let currentPage = 0;
+const tableBody = document.getElementById("flight-table-body");
+
+// ===== HIỂN THỊ =====
+function showPage(pageIndex) {
+  tableBody.innerHTML = "";
+  pages[pageIndex].forEach(f => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${f.flight}</td>
+      <td>${f.airline}</td>
+      <td>${f.dest}</td>
+      <td>${f.transit}</td>
+      <td>${f.dep}</td>
+      <td>${f.arr}</td>
+      <td class="status">${f.status}</td>
+    `;
+    tableBody.appendChild(row);
+  });
+}
+
+// ===== BẮT ĐẦU HIỂN THỊ VÀ LẶP =====
+showPage(currentPage);
+setInterval(() => {
+  currentPage = (currentPage + 1) % pages.length;
+  showPage(currentPage);
+}, 10000); // 5 giây/chuyển page
+
+</script>
 </body>
-</html>
