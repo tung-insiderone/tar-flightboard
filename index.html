@@ -1,3 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>TAR Airlines – Departures</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0b1d2a;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== HEADER (clean / dashboard style) ===== */
+.header {
+  background-color: #102a43;
+  padding: 16px 20px;
+  border-bottom: 1px solid #243b53;
+}
+.header-content {
+  display: flex;
+  align-items: center;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo {
+  height: 36px;
+  width: auto;
+}
+.header h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+.header p {
+  margin: 0;
+  font-size: 13px;
+  color: #9fb3c8;
+}
+
+/* ===== CONTENT ===== */
+.container {
+  padding: 20px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+th {
+  background-color: #243b53;
+}
+tr:nth-child(even) {
+  background-color: #1f2933;
+}
+.status {
+  color: #38bdf8;
+  font-weight: bold;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  padding: 15px;
+  text-align: center;
+  font-size: 12px;
+  color: #9fb3c8;
+}
+</style>
+</head>
+
 <body>
 
 <!-- ===== HEADER ===== -->
@@ -15,8 +94,7 @@
 
 <!-- ===== TABLE ===== -->
 <div class="container">
-<table>
-  <thead>
+  <table id="flightTable">
     <tr>
       <th>Flight</th>
       <th>Airline</th>
@@ -26,11 +104,8 @@
       <th>Arrival</th>
       <th>Status</th>
     </tr>
-  </thead>
-  <tbody id="flight-table-body">
-    <!-- Rows sẽ được JS thêm vào -->
-  </tbody>
-</table>
+    <!-- Flight rows sẽ được JS chèn vào đây -->
+  </table>
 </div>
 
 <!-- ===== FOOTER ===== -->
@@ -39,7 +114,7 @@
 </div>
 
 <script>
-// ===== DỮ LIỆU CHUYẾN BAY =====
+// ===== Flight data =====
 const flights = [
   { flight:"GA839", airline:"Garuda Indonesia", dest:"DPS", transit:"SIN", dep:"06:45", arr:"18:10", status:"On Time" },
   { flight:"JL312", airline:"Japan Airlines", dest:"OKA", transit:"TPE", dep:"07:25", arr:"19:30", status:"On Time" },
@@ -68,43 +143,40 @@ const flights = [
   { flight:"UL226", airline:"SriLankan Airlines", dest:"CMB", transit:"SIN", dep:"07:40", arr:"23:20", status:"On Time" },
   { flight:"JL826", airline:"Japan Airlines", dest:"FUK", transit:"ICN", dep:"06:50", arr:"17:10", status:"On Time" },
   { flight:"EY441", airline:"Etihad Airways", dest:"AUH", transit:"SIN", dep:"06:10", arr:"22:40", status:"On Time" },
-  { flight:"TG403", airline:"Thai Airways", dest:"BKK", transit:"Direct", dep:"10:30", arr:"12:15", status:"On Time" }
+  { flight:"NH848", airline:"All Nippon Airways", dest:"HND", transit:"Direct", dep:"06:30", arr:"14:10", status:"On Time" },
+  { flight:"TG403", airline:"Thai Airways", dest:"BKK", transit:"Direct", dep:"10:30", arr:"12:15", status:"On Time" },
+  { flight:"QH268", airline:"Bamboo Airways", dest:"HAN", transit:"Direct", dep:"11:30", arr:"14:15", status:"On Time"
 ];
 
-// ===== CHIA PAGE 15 CHUYẾN =====
-const pageSize = 15;
-const pages = [];
-for (let i = 0; i < flights.length; i += pageSize) {
-  pages.push(flights.slice(i, i + pageSize));
-}
-
+// ===== Variables =====
 let currentPage = 0;
-const tableBody = document.getElementById("flight-table-body");
+const pageSize = 15; // 15 chuyến/lần
+const table = document.getElementById("flightTable");
 
-// ===== HIỂN THỊ =====
-function showPage(pageIndex) {
-  tableBody.innerHTML = "";
-  pages[pageIndex].forEach(f => {
+// ===== Function hiển thị page =====
+function renderPage() {
+  // Xóa các rows cũ (trừ header)
+  table.querySelectorAll("tr:not(:first-child)").forEach(tr => tr.remove());
+
+  const start = currentPage * pageSize;
+  const end = start + pageSize;
+  const pageFlights = flights.slice(start, end);
+
+  pageFlights.forEach(f => {
     const row = document.createElement("tr");
-    row.innerHTML = `
-      <td>${f.flight}</td>
-      <td>${f.airline}</td>
-      <td>${f.dest}</td>
-      <td>${f.transit}</td>
-      <td>${f.dep}</td>
-      <td>${f.arr}</td>
-      <td class="status">${f.status}</td>
-    `;
-    tableBody.appendChild(row);
+    row.innerHTML = `<td>${f.flight}</td><td>${f.airline}</td><td>${f.dest}</td><td>${f.transit}</td><td>${f.dep}</td><td>${f.arr}</td><td class="status">${f.status}</td>`;
+    table.appendChild(row);
   });
+
+  // Cập nhật page
+  currentPage++;
+  if (currentPage * pageSize >= flights.length) currentPage = 0; // quay về đầu
 }
 
-// ===== BẮT ĐẦU HIỂN THỊ VÀ LẶP =====
-showPage(currentPage);
-setInterval(() => {
-  currentPage = (currentPage + 1) % pages.length;
-  showPage(currentPage);
-}, 10000); // 5 giây/chuyển page
-
+// ===== Auto flip every 5 seconds =====
+renderPage(); // hiển thị ngay lần đầu
+setInterval(renderPage, 10000);
 </script>
+
 </body>
+</html>
